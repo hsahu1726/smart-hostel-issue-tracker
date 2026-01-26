@@ -5,7 +5,7 @@ interface Issue {
   _id: string;
   title: string;
   description: string;
-  status: string;
+  status: "pending" | "in-progress" | "resolved";
   createdBy?: {
     name: string;
     email: string;
@@ -16,8 +16,12 @@ export default function AdminDashboard() {
   const [issues, setIssues] = useState<Issue[]>([]);
 
   const fetchAllIssues = async () => {
-    const res = await api.get("/issues");
-    setIssues(res.data);
+    try {
+      const res = await api.get("/issues");
+      setIssues(res.data);
+    } catch (err) {
+      alert("Failed to load issues");
+    }
   };
 
   useEffect(() => {
@@ -25,27 +29,35 @@ export default function AdminDashboard() {
   }, []);
 
   const updateStatus = async (id: string, status: string) => {
-    await api.put(`/issues/${id}`, { status });
-    fetchAllIssues();
+    try {
+      await api.put(`/issues/${id}`, { status });
+      fetchAllIssues();
+    } catch (err) {
+      alert("Failed to update status");
+    }
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Admin Dashboard</h2>
 
+      {issues.length === 0 && <p>No issues found.</p>}
+
       {issues.map((issue) => (
-        <div key={issue._id} style={{ border: "1px solid #ccc", padding: "10px", marginBottom: "10px" }}>
+        <div className="card" key={issue._id}>
           <h4>{issue.title}</h4>
           <p>{issue.description}</p>
-          <p>
-            <strong>Status:</strong> {issue.status}
-          </p>
 
           {issue.createdBy && (
             <p>
-              <strong>Student:</strong> {issue.createdBy.name} ({issue.createdBy.email})
+              <strong>Student:</strong>{" "}
+              {issue.createdBy.name} ({issue.createdBy.email})
             </p>
           )}
+
+          <p className={`status ${issue.status}`}>
+            Status: {issue.status}
+          </p>
 
           <select
             value={issue.status}
