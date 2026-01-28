@@ -50,41 +50,49 @@ export default function StudentDashboard() {
   };
 
   return (
-    <div className="container">
+  <div className="container">
+    <div className="header">
       <h2>Student Dashboard</h2>
+      <p className="meta">Report and track hostel issues</p>
+    </div>
 
-      <div className="card">
-        <h3>Create Issue</h3>
-        <form onSubmit={handleSubmit}>
-          <input
-            placeholder="Issue Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
+    <div className="card">
+      <div className="card-title">Raise a Complaint</div>
 
-          <textarea
-            placeholder="Describe your issue"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
+      <form onSubmit={handleSubmit}>
+        <input
+          placeholder="Issue title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
 
-          <button type="submit">Submit Issue</button>
-        </form>
-      </div>
+        <textarea
+          placeholder="Describe the issue in detail"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
 
-      <h3>My Issues</h3>
+        <button type="submit">Submit Issue</button>
+      </form>
+    </div>
 
-      {issues.length === 0 && <p>No issues submitted yet.</p>}
+    <div className="card">
+      <div className="card-title">My Complaints</div>
+
+      {issues.length === 0 && (
+        <p className="meta">No complaints submitted yet.</p>
+      )}
 
       {issues.map((issue) => (
-        <div className="card" key={issue._id}>
-          <h4>{issue.title}</h4>
-          <p>{issue.description}</p>
-          <p className={`status ${issue.status}`}>
-            Status: {issue.status}
-          </p>
+        <div key={issue._id} style={{ marginBottom: "12px" }}>
+          <strong>{issue.title}</strong>
+          <p className="meta">{issue.description}</p>
+          <span className={`badge ${issue.status}`}>
+            {issue.status}
+          </span>
         </div>
       ))}
     </div>
-  );
+  </div>
+);
 }

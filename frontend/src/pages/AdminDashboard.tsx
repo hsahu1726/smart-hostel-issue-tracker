@@ -38,37 +38,49 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="container">
+  <div className="container">
+    <div className="header">
       <h2>Admin Dashboard</h2>
+      <p className="meta">Manage and resolve student complaints</p>
+    </div>
 
-      {issues.length === 0 && <p>No issues found.</p>}
+    {issues.length === 0 && (
+      <div className="card">
+        <p className="meta">No complaints found.</p>
+      </div>
+    )}
 
-      {issues.map((issue) => (
-        <div className="card" key={issue._id}>
-          <h4>{issue.title}</h4>
-          <p>{issue.description}</p>
+    {issues.map((issue) => (
+      <div className="card" key={issue._id}>
+        <strong>{issue.title}</strong>
+        <p className="meta">{issue.description}</p>
 
-          {issue.createdBy && (
-            <p>
-              <strong>Student:</strong>{" "}
-              {issue.createdBy.name} ({issue.createdBy.email})
-            </p>
-          )}
-
-          <p className={`status ${issue.status}`}>
-            Status: {issue.status}
+        {issue.createdBy && (
+          <p className="meta">
+            Student: {issue.createdBy.name} ({issue.createdBy.email})
           </p>
+        )}
 
+        <div style={{ marginTop: "10px" }}>
+          <span className={`badge ${issue.status}`}>
+            {issue.status}
+          </span>
+        </div>
+
+        <div style={{ marginTop: "12px" }}>
           <select
             value={issue.status}
-            onChange={(e) => updateStatus(issue._id, e.target.value)}
+            onChange={(e) =>
+              updateStatus(issue._id, e.target.value)
+            }
           >
             <option value="pending">Pending</option>
             <option value="in-progress">In Progress</option>
             <option value="resolved">Resolved</option>
           </select>
         </div>
-      ))}
-    </div>
-  );
+      </div>
+    ))}
+  </div>
+);
 }
