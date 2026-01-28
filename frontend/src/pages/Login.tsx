@@ -28,40 +28,42 @@ export default function Login() {
   };
 
   return (
-    <div className="container">
-      <div className="card auth-card">
-        <h2>Login</h2>
-        <p className="auth-sub">
-          Logging in as <strong>{role}</strong>
-        </p>
+    <div className="bg-hostel">
+      <div className="container">
+        <div className="card auth-card">
+          <h2>Login</h2>
+          <p className="auth-sub">
+            Logging in as <strong>{role}</strong>
+          </p>
 
-        <form onSubmit={handleLogin}>
-          <input
-            type="email"
-            placeholder="Email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <form onSubmit={handleLogin}>
+            <input
+              type="email"
+              placeholder="Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
 
-          <button type="submit">Login</button>
-        </form>
+            <button type="submit">Login</button>
+          </form>
 
-        <p className="auth-link meta">
-          New user?{" "}
-          <span
-            style={{ color: "#2563eb", cursor: "pointer" }}
-            onClick={() => navigate("/register")}
-          >
-            Register here
-          </span>
-        </p>
+          <p className="auth-link meta">
+            New user?{" "}
+            <span
+              style={{ color: "#2563eb", cursor: "pointer" }}
+              onClick={() => navigate("/register")}
+            >
+              Register here
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   );
