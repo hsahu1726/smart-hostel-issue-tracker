@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+import SelectRole from "./pages/SelectRole";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import StudentDashboard from "./pages/StudentDashboard";
@@ -10,23 +11,14 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* 🔹 Default route (prevents white screen) */}
-        <Route
-          path="/"
-          element={
-            localStorage.getItem("token")
-              ? localStorage.getItem("role") === "admin"
-                ? <Navigate to="/admin" />
-                : <Navigate to="/student" />
-              : <Navigate to="/login" />
-          }
-        />
+        {/* 🔹 STEP 1: Role Selection Page */}
+        <Route path="/" element={<SelectRole />} />
 
-        {/* 🔹 Public routes */}
+        {/* 🔹 STEP 2: Login & Register */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* 🔹 Student protected route */}
+        {/* 🔹 STEP 3: Student Dashboard */}
         <Route
           path="/student"
           element={
@@ -36,7 +28,7 @@ function App() {
           }
         />
 
-        {/* 🔹 Admin protected route */}
+        {/* 🔹 STEP 4: Admin Dashboard */}
         <Route
           path="/admin"
           element={
@@ -45,6 +37,9 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        {/* 🔹 Fallback (optional safety) */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   );

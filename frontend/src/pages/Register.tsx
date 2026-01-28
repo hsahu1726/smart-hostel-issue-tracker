@@ -3,15 +3,21 @@ import { useNavigate } from "react-router-dom";
 import api from "../api/api";
 
 export default function Register() {
+  const navigate = useNavigate();
+  const role = localStorage.getItem("selectedRole");
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("student");
 
-  const navigate = useNavigate();
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!role) {
+      alert("Please select role first");
+      navigate("/");
+      return;
+    }
 
     try {
       await api.post("/auth/register", {
@@ -23,48 +29,43 @@ export default function Register() {
 
       alert("Registration successful. Please login.");
       navigate("/login");
-    } catch (err: any) {
-      alert(err.response?.data?.message || "Registration failed");
+    } catch (err) {
+      alert("Registration failed");
     }
   };
 
   return (
-    <div>
-      <h2>Register</h2>
+    <div className="container">
+      <div className="card" style={{ maxWidth: "450px", margin: "100px auto" }}>
+        <h2>Register</h2>
+        <p className="meta">
+          Registering as <strong>{role}</strong>
+        </p>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <br /><br />
+        <form onSubmit={handleRegister}>
+          <input
+            placeholder="Full Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <br /><br />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <br /><br />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        <select value={role} onChange={(e) => setRole(e.target.value)}>
-          <option value="student">Student</option>
-          <option value="admin">Admin</option>
-        </select>
-        <br /><br />
-
-        <button type="submit">Register</button>
-      </form>
+          <button type="submit">Register</button>
+        </form>
+      </div>
     </div>
   );
 }
