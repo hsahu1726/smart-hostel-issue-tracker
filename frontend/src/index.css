@@ -195,3 +195,17 @@ button:hover {
   font-size: 32px;
   margin-bottom: 16px;
 }
+
+/* Background with hostel image */
+.bg-hostel {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(
+      rgba(245, 247, 251, 0.85),
+      rgba(245, 247, 251, 0.85)
+    ),
+    url("/src/assets/hostel.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

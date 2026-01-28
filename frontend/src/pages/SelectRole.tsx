@@ -9,7 +9,7 @@ export default function SelectRole() {
   };
 
   return (
-    <div className="role-container">
+    <div className="bg-hostel role-container">
       <div className="card role-card" style={{ textAlign: "center" }}>
         <h1 style={{ fontSize: "32px", fontWeight: 700, marginBottom: "8px" }}>
           Welcome to <span style={{ color: "#2563eb" }}>THE HOSTEL</span>
