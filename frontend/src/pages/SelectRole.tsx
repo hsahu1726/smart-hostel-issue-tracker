@@ -10,9 +10,14 @@ export default function SelectRole() {
 
   return (
     <div className="role-container">
-      <div className="card role-card">
-        <h2>Select Account Type</h2>
-        <p className="meta">Choose how you want to continue</p>
+      <div className="card role-card" style={{ textAlign: "center" }}>
+        <h1 style={{ fontSize: "32px", fontWeight: 700, marginBottom: "8px" }}>
+          Welcome to <span style={{ color: "#2563eb" }}>THE HOSTEL</span>
+        </h1>
+
+        <p className="meta" style={{ fontSize: "16px" }}>
+          Choose how you want to continue
+        </p>
 
         <div className="role-grid">
           <div
