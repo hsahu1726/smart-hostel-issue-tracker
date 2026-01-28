@@ -1,5 +1,8 @@
 import { useNavigate } from "react-router-dom";
 
+import studentImg from "../assets/student.jpg";
+import staffImg from "../assets/staff.jpg";
+
 export default function SelectRole() {
   const navigate = useNavigate();
 
@@ -20,22 +23,38 @@ export default function SelectRole() {
         </p>
 
         <div className="role-grid">
+          {/* STUDENT CARD */}
           <div
             className="role-option"
             onClick={() => selectRole("student")}
           >
-            <div className="role-icon">🎓</div>
+            <div className="role-image-wrapper">
+              <img
+                src={studentImg}
+                alt="Hostel Student"
+                className="role-image"
+              />
+            </div>
+
             <div className="role-title">Hostel Student</div>
             <div className="role-desc">
               Report hostel issues and track their resolution status.
             </div>
           </div>
 
+          {/* STAFF CARD */}
           <div
             className="role-option"
             onClick={() => selectRole("admin")}
           >
-            <div className="role-icon">🛠️</div>
+            <div className="role-image-wrapper">
+              <img
+                src={staffImg}
+                alt="Management Staff"
+                className="role-image"
+              />
+            </div>
+
             <div className="role-title">Management Staff</div>
             <div className="role-desc">
               Manage, review, and resolve reported hostel issues.
