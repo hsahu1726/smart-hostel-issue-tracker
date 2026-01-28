@@ -14,7 +14,6 @@ export default function Register() {
     e.preventDefault();
 
     if (!role) {
-      alert("Please select role first");
       navigate("/");
       return;
     }
@@ -26,32 +25,30 @@ export default function Register() {
         password,
         role,
       });
-
-      alert("Registration successful. Please login.");
       navigate("/login");
-    } catch (err) {
+    } catch {
       alert("Registration failed");
     }
   };
 
   return (
     <div className="container">
-      <div className="card" style={{ maxWidth: "450px", margin: "100px auto" }}>
-        <h2>Register</h2>
-        <p className="meta">
+      <div className="card auth-card">
+        <h2>Create Account</h2>
+        <p className="auth-sub">
           Registering as <strong>{role}</strong>
         </p>
 
         <form onSubmit={handleRegister}>
           <input
-            placeholder="Full Name"
+            placeholder="Full name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
 
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />

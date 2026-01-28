@@ -102,3 +102,44 @@ button:hover {
   font-size: 13px;
   color: var(--muted);
 }
+
+/* Bigger auth cards */
+.auth-card {
+  max-width: 520px;
+  margin: 120px auto;
+  padding: 36px;
+}
+
+/* Stronger headings */
+.auth-card h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+/* Subtext */
+.auth-sub {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+/* Bigger inputs */
+.auth-card input {
+  padding: 14px 16px;
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+/* Bigger primary button */
+.auth-card button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Register link */
+.auth-link {
+  margin-top: 18px;
+  font-size: 14px;
+}

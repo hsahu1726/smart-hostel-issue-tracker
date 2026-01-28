@@ -13,38 +13,32 @@ export default function Login() {
     e.preventDefault();
 
     if (!role) {
-      alert("Please select role first");
       navigate("/");
       return;
     }
 
     try {
-      const res = await api.post("/auth/login", {
-        email,
-        password,
-      });
-
+      const res = await api.post("/auth/login", { email, password });
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", role);
-
       navigate(role === "admin" ? "/admin" : "/student");
-    } catch (err) {
+    } catch {
       alert("Invalid credentials");
     }
   };
 
   return (
     <div className="container">
-      <div className="card" style={{ maxWidth: "450px", margin: "100px auto" }}>
+      <div className="card auth-card">
         <h2>Login</h2>
-        <p className="meta">
+        <p className="auth-sub">
           Logging in as <strong>{role}</strong>
         </p>
 
         <form onSubmit={handleLogin}>
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -59,7 +53,7 @@ export default function Login() {
           <button type="submit">Login</button>
         </form>
 
-        <p className="meta" style={{ marginTop: "16px" }}>
+        <p className="auth-link meta">
           New user?{" "}
           <span
             style={{ color: "#2563eb", cursor: "pointer" }}
