@@ -51,13 +51,15 @@ export default function StudentDashboard() {
 
   return (
   <div className="container">
-    <div className="header">
-      <h2>Student Dashboard</h2>
-      <p className="meta">Report and track hostel issues</p>
+    {/* Header */}
+    <div className="dashboard-header">
+      <h1>Student Dashboard</h1>
+      <p>Report issues and track their resolution in real time</p>
     </div>
 
-    <div className="card">
-      <div className="card-title">Raise a Complaint</div>
+    {/* Raise Complaint */}
+    <div className="card action-card">
+      <div className="section-title">Raise a Complaint</div>
 
       <form onSubmit={handleSubmit}>
         <input
@@ -76,22 +78,29 @@ export default function StudentDashboard() {
       </form>
     </div>
 
+    {/* Complaints List */}
     <div className="card">
-      <div className="card-title">My Complaints</div>
+      <div className="section-title">My Complaints</div>
 
-      {issues.length === 0 && (
-        <p className="meta">No complaints submitted yet.</p>
-      )}
-
-      {issues.map((issue) => (
-        <div key={issue._id} style={{ marginBottom: "12px" }}>
-          <strong>{issue.title}</strong>
-          <p className="meta">{issue.description}</p>
-          <span className={`badge ${issue.status}`}>
-            {issue.status}
-          </span>
+      {issues.length === 0 ? (
+        <div className="empty-state">
+          <span>📭</span>
+          <p>No complaints submitted yet</p>
+          <p style={{ fontSize: "13px" }}>
+            Your reported issues will appear here
+          </p>
         </div>
-      ))}
+      ) : (
+        issues.map((issue) => (
+          <div key={issue._id} style={{ marginBottom: "14px" }}>
+            <strong>{issue.title}</strong>
+            <p className="meta">{issue.description}</p>
+            <span className={`badge ${issue.status}`}>
+              {issue.status}
+            </span>
+          </div>
+        ))
+      )}
     </div>
   </div>
 );
