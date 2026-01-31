@@ -16,7 +16,7 @@ The goal of this project is to design and implement a **centralized, transparent
 
 # 👥 Team Name
 
-**Team Vibe123**
+**NewHack**
 
 ---
 
@@ -24,7 +24,7 @@ The goal of this project is to design and implement a **centralized, transparent
 
 🔗 **https://smart-hostel-issue-tracker.vercel.app**
 
-> Frontend is deployed on Vercel  
+> Frontend is deployed on Vercel and is connected with the backend
 > Backend is deployed on Render using MongoDB Atlas
 
 ---
@@ -120,3 +120,81 @@ The platform ensures **transparency, accountability, and faster resolution** of 
 git clone https://github.com/hsahu1726/smart-hostel-issue-tracker.git
 cd smart-hostel-issue-tracker
 ```
+
+### 🔹 Backend Setup
+```bash
+cd backend
+npm install
+```
+Run backend (development mode):
+```bash
+npm run dev
+```
+Backend will run on:
+```bash
+http://localhost:5000
+```
+
+### 🔹 Backend Environment Variables
+Create a .env file inside the backend folder:
+```bash
+touch .env
+```
+Add the following to .env:
+```bash
+PORT=5000
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/hostel
+JWT_SECRET=your_secret_key
+```
+
+### 🔹 Frontend Setup
+```bash
+cd ../frontend
+npm install
+```
+Run frontend:
+```bash
+npm run dev
+```
+Frontend will run on:
+```bash
+http://localhost:5173
+```
+
+### 🔹 Frontend Environment Variables
+If using environment‑based API URL, create .env in frontend:
+```bash
+touch .env
+```
+Add:
+```bash
+VITE_API_URL=http://localhost:5000/api
+```
+For production:
+```bash
+VITE_API_URL=https://<your-backend>.onrender.com/api
+```
+
+### 🔹 Build Frontend for Production
+```bash
+npm run build
+```
+
+### 🔹 Preview Production Build
+```bash
+npm run preview
+```
+
+### 🔹 Common Commands Summary
+```bash
+# Start backend
+cd backend && npm run dev
+
+# Start frontend
+cd frontend && npm run dev
+```
+### 🔹 Stop All Running Servers
+```bash
+CTRL + C
+```
+
