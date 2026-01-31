@@ -198,3 +198,45 @@ cd frontend && npm run dev
 CTRL + C
 ```
 
+## 📡 API Endpoints
+
+### Create Issue (Student)
+```bash
+POST /api/issues
+```
+Request Body:
+```bash
+{
+  "title": <title_of_your_issue>,
+  "description": <desc_of_your_issue>
+}
+```
+
+### Get Student Issues
+```bash
+GET /api/issues/my
+```
+
+### Get All Issues (Admin)
+```bash
+GET /api/issues
+```
+
+### Update Issue Status (Admin)
+```bash
+PUT /api/issues/:id
+```
+## 📈 Future Enhancements
+-Issue categorization and priority levels
+-Image and media uploads
+-Analytics dashboard for hostel management
+-Notification system (email / push)
+-Lost & Found module
+-Multi‑hostel and multi‑block support
+
+## 🏁 Conclusion
+Smart Hostel Issue Tracker provides a practical, scalable, and transparent solution for managing hostel infrastructure issues.
+It improves accountability, reduces response time, and enhances communication between students and hostel authorities.
+
+
+
