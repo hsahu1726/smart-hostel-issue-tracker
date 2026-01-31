@@ -24,8 +24,8 @@ The goal of this project is to design and implement a **centralized, transparent
 
 🔗 **https://smart-hostel-issue-tracker.vercel.app**
 
-> Frontend is deployed on Vercel and is connected with the backend
-> Backend is deployed on Render using MongoDB Atlas
+- Frontend is deployed on Vercel and is connected with the backend
+- Backend is deployed on Render using MongoDB Atlas
 
 ---
 
