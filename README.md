@@ -120,6 +120,7 @@ The platform ensures **transparency, accountability, and faster resolution** of 
 git clone https://github.com/hsahu1726/smart-hostel-issue-tracker.git
 cd smart-hostel-issue-tracker
 ```
+--- 
 
 ### 🔹 Backend Setup
 ```bash
@@ -134,6 +135,7 @@ Backend will run on:
 ```bash
 http://localhost:5000
 ```
+---
 
 ### 🔹 Backend Environment Variables
 Create a .env file inside the backend folder:
@@ -146,6 +148,7 @@ PORT=5000
 MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/hostel
 JWT_SECRET=your_secret_key
 ```
+---
 
 ### 🔹 Frontend Setup
 ```bash
@@ -160,6 +163,7 @@ Frontend will run on:
 ```bash
 http://localhost:5173
 ```
+---
 
 ### 🔹 Frontend Environment Variables
 If using environment‑based API URL, create .env in frontend:
@@ -174,16 +178,19 @@ For production:
 ```bash
 VITE_API_URL=https://<your-backend>.onrender.com/api
 ```
+---
 
 ### 🔹 Build Frontend for Production
 ```bash
 npm run build
 ```
+---
 
 ### 🔹 Preview Production Build
 ```bash
 npm run preview
 ```
+---
 
 ### 🔹 Common Commands Summary
 ```bash
@@ -193,10 +200,14 @@ cd backend && npm run dev
 # Start frontend
 cd frontend && npm run dev
 ```
+
+---
+
 ### 🔹 Stop All Running Servers
 ```bash
 CTRL + C
 ```
+---
 
 ## 📡 API Endpoints
 
@@ -211,21 +222,26 @@ Request Body:
   "description": <desc_of_your_issue>
 }
 ```
+---
 
 ### Get Student Issues
 ```bash
 GET /api/issues/my
 ```
+---
 
 ### Get All Issues (Admin)
 ```bash
 GET /api/issues
 ```
+---
 
 ### Update Issue Status (Admin)
 ```bash
 PUT /api/issues/:id
 ```
+---
+
 ## 📈 Future Enhancements
 - Issue categorization and priority levels
 - Image and media uploads
@@ -234,9 +250,38 @@ PUT /api/issues/:id
 - Lost & Found module
 - Multi‑hostel and multi‑block support
 
+---
+
 ## 🏁 Conclusion
 Smart Hostel Issue Tracker provides a practical, scalable, and transparent solution for managing hostel infrastructure issues.
 It improves accountability, reduces response time, and enhances communication between students and hostel authorities.
 
+---
 
+## 📸 Application Screenshots
+
+### 🏠 Landing Page
+![Landing Page](screenshots/landing.png)
+
+---
+
+### 🔐 Login Page
+![Login Page](screenshots/login.png)
+
+---
+
+### 📝 Registration Page
+![Register Page](screenshots/register.png)
+
+---
+
+### 🛠️ Admin Dashboard
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+---
+
+### 🎓 Student Dashboard
+![Student Dashboard](screenshots/student-dashboard.png)
+
+---
 
