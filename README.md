@@ -227,12 +227,12 @@ GET /api/issues
 PUT /api/issues/:id
 ```
 ## 📈 Future Enhancements
--Issue categorization and priority levels
--Image and media uploads
--Analytics dashboard for hostel management
--Notification system (email / push)
--Lost & Found module
--Multi‑hostel and multi‑block support
+- Issue categorization and priority levels
+- Image and media uploads
+- Analytics dashboard for hostel management
+- Notification system (email / push)
+- Lost & Found module
+- Multi‑hostel and multi‑block support
 
 ## 🏁 Conclusion
 Smart Hostel Issue Tracker provides a practical, scalable, and transparent solution for managing hostel infrastructure issues.
