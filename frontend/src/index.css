@@ -273,3 +273,26 @@ button:hover {
   display: block;
   margin-bottom: 12px;
 }
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge.pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.badge.in-progress {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.badge.resolved {
+  background: #ecfdf5;
+  color: #047857;
+}
