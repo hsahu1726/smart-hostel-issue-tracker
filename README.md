@@ -1,4 +1,4 @@
-# 📌 Problem Statement
+# Problem Statement
 
 **Digital Hostel Issue Management System**
 
@@ -8,21 +8,21 @@ The goal of this project is to design and implement a **centralized, transparent
 
 ---
 
-# 🏨 Project Name
+# Project Name
 
 **Smart Hostel Issue Tracker**
 
 ---
 
-# 👥 Team Name
+# Team Name
 
 **NewHack**
 
 ---
 
-# 🌐 Deployed Link
+# Deployed Link
 
-🔗 **https://smart-hostel-issue-tracker.vercel.app**
+**https://smart-hostel-issue-tracker.vercel.app**
 
 - Frontend is deployed on Vercel and is connected with the backend
 - Backend is deployed on Render using MongoDB Atlas
@@ -30,7 +30,7 @@ The goal of this project is to design and implement a **centralized, transparent
 ---
 
 
-## 🚀 Project Overview
+## Project Overview
 
 **Smart Hostel Issue Tracker** is a role‑based web platform designed to digitize hostel issue reporting and resolution.
 
@@ -43,9 +43,9 @@ The platform ensures **transparency, accountability, and faster resolution** of 
 
 ---
 
-## 🧑‍🎓 User Roles Implemented
+## User Roles Implemented
 
-### 1️⃣ Student
+### 1️. Student
 - Register and log in securely
 - Raise hostel issues (plumbing, electricity, cleanliness, etc.)
 - View all submitted complaints
@@ -56,7 +56,7 @@ The platform ensures **transparency, accountability, and faster resolution** of 
 
 ---
 
-### 2️⃣ Hostel Management (Admin)
+### 2️. Hostel Management (Admin)
 - Secure admin login
 - View all reported issues
 - Update issue status
@@ -65,7 +65,7 @@ The platform ensures **transparency, accountability, and faster resolution** of 
 
 ---
 
-## 🧭 Application Flow
+## Application Flow
 
 1. **Step 1:** User selects role (Student / Management)
 2. **Step 2:** User registers or logs in
@@ -76,7 +76,7 @@ The platform ensures **transparency, accountability, and faster resolution** of 
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 ### Core Issue Management
 - Secure issue reporting system
@@ -96,7 +96,7 @@ The platform ensures **transparency, accountability, and faster resolution** of 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - React (Vite)
@@ -113,16 +113,16 @@ The platform ensures **transparency, accountability, and faster resolution** of 
 
 ---
 
-## ⚙️ Setup & Installation
+## Setup & Installation
 
-### 🔹 Clone Repository
+###  Clone Repository
 ```bash
 git clone https://github.com/hsahu1726/smart-hostel-issue-tracker.git
 cd smart-hostel-issue-tracker
 ```
 --- 
 
-### 🔹 Backend Setup
+###  Backend Setup
 ```bash
 cd backend
 npm install
@@ -137,7 +137,7 @@ http://localhost:5000
 ```
 ---
 
-### 🔹 Backend Environment Variables
+###  Backend Environment Variables
 Create a .env file inside the backend folder:
 ```bash
 touch .env
@@ -150,7 +150,7 @@ JWT_SECRET=your_secret_key
 ```
 ---
 
-### 🔹 Frontend Setup
+###  Frontend Setup
 ```bash
 cd ../frontend
 npm install
@@ -165,7 +165,7 @@ http://localhost:5173
 ```
 ---
 
-### 🔹 Frontend Environment Variables
+###  Frontend Environment Variables
 If using environment‑based API URL, create .env in frontend:
 ```bash
 touch .env
@@ -180,19 +180,19 @@ VITE_API_URL=https://<your-backend>.onrender.com/api
 ```
 ---
 
-### 🔹 Build Frontend for Production
+###  Build Frontend for Production
 ```bash
 npm run build
 ```
 ---
 
-### 🔹 Preview Production Build
+###  Preview Production Build
 ```bash
 npm run preview
 ```
 ---
 
-### 🔹 Common Commands Summary
+###  Common Commands Summary
 ```bash
 # Start backend
 cd backend && npm run dev
@@ -203,13 +203,13 @@ cd frontend && npm run dev
 
 ---
 
-### 🔹 Stop All Running Servers
+###  Stop All Running Servers
 ```bash
 CTRL + C
 ```
 ---
 
-## 📡 API Endpoints
+##  API Endpoints
 
 ### Create Issue (Student)
 ```bash
@@ -242,7 +242,7 @@ PUT /api/issues/:id
 ```
 ---
 
-## 📈 Future Enhancements
+##  Future Enhancements
 - Issue categorization and priority levels
 - Image and media uploads
 - Analytics dashboard for hostel management
@@ -252,35 +252,35 @@ PUT /api/issues/:id
 
 ---
 
-## 🏁 Conclusion
+##  Conclusion
 Smart Hostel Issue Tracker provides a practical, scalable, and transparent solution for managing hostel infrastructure issues.
 It improves accountability, reduces response time, and enhances communication between students and hostel authorities.
 
 ---
 
-## 📸 Application Screenshots
+##  Application Screenshots
 
-### 🏠 Landing Page
+###  Landing Page
 ![Landing Page](screenshots/landing.png)
 
 ---
 
-### 🔐 Login Page
+###  Login Page
 ![Login Page](screenshots/login.png)
 
 ---
 
-### 📝 Registration Page
+###  Registration Page
 ![Register Page](screenshots/register.png)
 
 ---
 
-### 🛠️ Admin Dashboard
+###  Admin Dashboard
 ![Admin Dashboard](screenshots/admin-dashboard.png)
 
 ---
 
-### 🎓 Student Dashboard
+###  Student Dashboard
 ![Student Dashboard](screenshots/student-dashboard.png)
 
 ---
